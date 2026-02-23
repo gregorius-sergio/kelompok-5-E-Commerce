@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLCKWHT - Page 3</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: '#0e7490', /* Cyan 700 */
+                        primaryDark: '#083344', /* Cyan 900 */
+                        accent: '#10b981', /* Emerald/Green 500 */
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body data-page="3" class="bg-white text-primary antialiased animated-bg">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter">BLCKWHT.</a>
+
+            <div class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-600">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="index.html#featured" class="hover:text-primary transition-colors">Best Sellers</a>
+                <a href="index.html#katalog" class="text-primary hover:text-gray-900 transition-colors">Shop All</a>
+            </div>
+
+            <div class="flex items-center space-x-6 relative">
+                <!-- Search Dropdown -->
+                <div class="relative group" id="searchWrapper">
+                    <button class="text-gray-600 hover:text-primary transition-colors flex items-center" id="searchBtn">
+                        <i class="ph ph-magnifying-glass text-xl"></i>
+                    </button>
+                    <!-- Hidden Input field that shows on click -->
+                    <div id="searchBox"
+                        class="absolute top-10 right-0 w-72 glass-dropdown rounded-xl shadow-xl p-3 hidden opacity-0 transition-opacity duration-300">
+                        <input type="text" id="searchInput" placeholder="Search modern staples..."
+                            class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary rounded-xl">
+                        <div id="searchResults" class="max-h-60 overflow-y-auto mt-2 space-y-2"></div>
+                    </div>
+                </div>
+                <button class="text-gray-600 hover:text-primary transition-colors relative" id="cartBtn">
+                    <i class="ph ph-shopping-bag text-xl"></i>
+                    <span id="cartCount"
+                        class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                </button>
+
+                <div id="cartDropdown"
+                    class="glass-dropdown hidden absolute top-10 right-0 w-80 rounded-2xl shadow-2xl p-6 flex flex-col gap-4">
+                    <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                        <h3 class="font-semibold text-lg">Your Bag</h3>
+                        <p class="text-xs text-gray-500" id="cartItemsCountLabel">0 items</p>
+                    </div>
+                    <div id="cartItemsContainer" class="max-h-64 overflow-y-auto pr-2 space-y-4"></div>
+                    <div class="border-t border-gray-100 pt-3">
+                        <div class="flex justify-between items-center font-bold mb-4">
+                            <span>Subtotal</span>
+                            <span id="cartTotal">Rp 0</span>
+                        </div>
+                        <button id="checkoutBtn"
+                            class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 rounded-lg transition-colors flex justify-center items-center gap-2">
+                            <i class="ph-fill ph-whatsapp-logo text-lg"></i> Checkout via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CATALOG AREA -->
+    <main class="max-w-7xl mx-auto px-6 py-20" id="katalog">
+        <div class="mb-12 text-center md:text-left">
+            <h2 class="text-3xl font-bold tracking-tight">The Archive / Page 3</h2>
+            <p class="text-gray-500 mt-2">Explore our full range of minimalist apparel.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8" id="productGrid">
+            <div class="col-span-3 text-center py-20 text-gray-400">Loading catalog...</div>
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="flex justify-center items-center mt-20 gap-2">
+            <a href="index.html"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white border-2 border-primary text-primary hover:bg-cyan-50 transition-colors">1</a>
+            <a href="page2.html"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white border-2 border-primary text-primary hover:bg-cyan-50 transition-colors">2</a>
+            <a href="page3.html"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white font-medium shadow-md">3</a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-20 pb-10 mt-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Branding -->
+                <div class="md:col-span-2">
+                    <h3 class="text-3xl font-bold tracking-tighter mb-4">BLCKWHT.</h3>
+                    <p class="text-gray-400 max-w-sm">Designing everyday essentials with a focus on modern minimalism,
+                        functionality, and timeless aesthetics.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold text-gray-300 mb-6 uppercase tracking-wider text-sm">Shop</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">New Arrivals</a></li>
+                        <li><a href="index.html#featured" class="hover:text-white transition-colors">Best Sellers</a>
+                        </li>
+                        <li><a href="index.html#katalog" class="hover:text-white transition-colors">All Products</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Connect -->
+                <div>
+                    <h4 class="font-semibold text-gray-300 mb-6 uppercase tracking-wider text-sm">Connect</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 BLCKWHT. All rights reserved. <br /> <span
+                        class="text-cyan-500 font-medium block mt-1">Powered By Google Antigravity</span></p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

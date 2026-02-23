@@ -1,0 +1,130 @@
+[
+    {
+        "id": "p1",
+        "title": "Raw Edge Hoodie",
+        "price": 450000,
+        "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "desc": "Heavyweight 500gsm cotton hoodie with raw, uncut edges. Minimalist brutalist design.",
+        "stock": 14
+    },
+    {
+        "id": "p2",
+        "title": "Utility Cargo Pants",
+        "price": 550000,
+        "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "desc": "Oversized tactical cargo pants. 10 pockets, waterproof finish, stark black.",
+        "stock": 8
+    },
+    {
+        "id": "p3",
+        "title": "Boxy Graphic Tee",
+        "price": 250000,
+        "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "desc": "Drop shoulder t-shirt in pure white with high-contrast brutalist typography print.",
+        "stock": 42
+    },
+    {
+        "id": "p4",
+        "title": "Industrial Denim Jacket",
+        "price": 750000,
+        "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80",
+        "desc": "Washed black denim with exaggerated hardware and sharp collar.",
+        "stock": 5
+    },
+    {
+        "id": "p5",
+        "title": "Neon Accent Beanie",
+        "price": 120000,
+        "image": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "desc": "A shock of neon green to break up the monochromatic uniform. 100% thick wool.",
+        "stock": 25
+    },
+    {
+        "id": "p6",
+        "title": "Structured Blazer",
+        "price": 850000,
+        "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "desc": "Sharp shoulders, zero lapels. An architectural approach to formalwear.",
+        "stock": 3
+    },
+    {
+        "id": "p7",
+        "title": "Mesh Layering Top",
+        "price": 200000,
+        "image": "https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "desc": "Translucent black mesh for structural layering.",
+        "stock": 18
+    },
+    {
+        "id": "p8",
+        "title": "Combat Boots",
+        "price": 1250000,
+        "image": "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "desc": "Chunky rubber sole, premium leather, steel toe cap.",
+        "stock": 10
+    },
+    {
+        "id": "p9",
+        "title": "Asymmetric Skirt",
+        "price": 380000,
+        "image": "https://images.unsplash.com/photo-1550639525-c97d455acf70?auto=format&fit=crop&w=800&q=80",
+        "desc": "Geometrically cut nylon skirt with raw edge finish.",
+        "stock": 12
+    },
+    {
+        "id": "p10",
+        "title": "Oversized Trench Coat",
+        "price": 1100000,
+        "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+        "desc": "Floor-length, exaggerated proportions in stark gray.",
+        "stock": 4
+    },
+    {
+        "id": "p11",
+        "title": "Distressed Knit Sweater",
+        "price": 420000,
+        "image": "https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "desc": "Intentionally destroyed details on hem and cuffs. Soft but looks tough.",
+        "stock": 20
+    },
+    {
+        "id": "p12",
+        "title": "Techwear Vest",
+        "price": 500000,
+        "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
+        "desc": "Modular vest with D-rings and magnetic clasps.",
+        "stock": 7
+    },
+    {
+        "id": "p13",
+        "title": "Minimalist Totebag",
+        "price": 150000,
+        "image": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80",
+        "desc": "Heavy canvas, single strap, pure geometric shape.",
+        "stock": 35
+    },
+    {
+        "id": "p14",
+        "title": "Nylon Track Pants",
+        "price": 350000,
+        "image": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "desc": "Water-resistant, loose fit, striking blue accents on solid black.",
+        "stock": 22
+    },
+    {
+        "id": "p15",
+        "title": "Safety Pin Necklace",
+        "price": 85000,
+        "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "desc": "Chunky stainless steel industrial jewelry.",
+        "stock": 50
+    },
+    {
+        "id": "p16",
+        "title": "Balaclava Facemask",
+        "price": 100000,
+        "image": "https://images.unsplash.com/photo-1599839619722-39751411ea63?auto=format&fit=crop&w=800&q=80",
+        "desc": "Knitted balaclava for a completely anonymous brutalist uniform.",
+        "stock": 15
+    }
+]

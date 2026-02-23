@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLCKWHT - Minimalist Totebag</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { 
+                        primary: '#0e7490', /* Cyan 700 */
+                        primaryDark: '#083344', /* Cyan 900 */
+                        accent: '#10b981', /* Emerald/Green 500 */
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-primary antialiased animated-bg">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 glass-nav transition-all duration-300 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter">BLCKWHT.</a>
+            
+            <div class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-600">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="index.html#featured" class="hover:text-primary transition-colors">Best Sellers</a>
+                <a href="index.html#katalog" class="hover:text-primary transition-colors">Shop All</a>
+            </div>
+
+            <div class="flex items-center space-x-6 relative">
+                <!-- Search Dropdown -->
+                <div class="relative group" id="searchWrapper">
+                    <button class="text-gray-600 hover:text-primary transition-colors flex items-center" id="searchBtn">
+                        <i class="ph ph-magnifying-glass text-xl"></i>
+                    </button>
+                    <!-- Hidden Input field that shows on click -->
+                    <div id="searchBox" class="absolute top-10 right-0 w-72 glass-dropdown rounded-xl shadow-xl p-3 hidden opacity-0 transition-opacity duration-300">
+                        <input type="text" id="searchInput" placeholder="Search modern staples..." class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary rounded-xl">
+                        <div id="searchResults" class="max-h-60 overflow-y-auto mt-2 space-y-2"></div>
+                    </div>
+                </div>
+                <button class="text-gray-600 hover:text-primary transition-colors relative" id="cartBtn">
+                    <i class="ph ph-shopping-bag text-xl"></i>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                </button>
+
+                <div id="cartDropdown" class="glass-dropdown hidden absolute top-10 right-0 w-80 rounded-2xl shadow-2xl p-6 flex flex-col gap-4">
+                    <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                        <h3 class="font-semibold text-lg">Your Bag</h3>
+                        <p class="text-xs text-gray-500" id="cartItemsCountLabel">0 items</p>
+                    </div>
+                    <div id="cartItemsContainer" class="max-h-64 overflow-y-auto pr-2 space-y-4"></div>
+                    <div class="border-t border-gray-100 pt-3">
+                        <div class="flex justify-between items-center font-bold mb-4">
+                            <span>Subtotal</span>
+                            <span id="cartTotal">Rp 0</span>
+                        </div>
+                        <button id="checkoutBtn" class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 rounded-lg transition-colors flex justify-center items-center gap-2">
+                            <i class="ph-fill ph-whatsapp-logo text-lg"></i> Checkout via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PRODUCT DETAIL SECTION -->
+    <main class="max-w-7xl mx-auto px-6 py-12 md:py-24">
+        <!-- Breadcrumb -->
+        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-8">
+            <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+            <span>/</span>
+            <a href="index.html#katalog" class="hover:text-primary transition-colors">Shop All</a>
+            <span>/</span>
+            <span class="text-primary font-medium">Minimalist Totebag</span>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-16">
+            <!-- Left: High Res Image -->
+            <div class="w-full md:w-1/2">
+                <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-gray-50 md:sticky md:top-24">
+                    <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80" alt="Minimalist Totebag" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <!-- Right: Product Information -->
+            <div class="w-full md:w-1/2 flex flex-col justify-center">
+                <div class="mb-2">
+                    <span class="text-green-600 text-xs font-bold tracking-widest uppercase">
+                        In Stock
+                    </span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Minimalist Totebag</h1>
+                <p class="text-2xl text-gray-700 font-medium mb-8 border-b border-gray-100 pb-8">Rp 150.000</p>
+                
+                <p class="text-gray-500 text-lg leading-relaxed mb-10">
+                    Heavy canvas, single strap, pure geometric shape.
+                </p>
+                
+                <div class="space-y-4 mb-10">
+                    <p class="text-sm font-semibold">Available Stock: <span class="text-gray-600 font-normal">35 units</span></p>
+                    <div class="flex items-center gap-4 text-sm text-gray-500 border border-gray-100 rounded-xl p-4">
+                        <i class="ph ph-shield-check text-2xl text-gray-400"></i>
+                        <p>100% Authentic quality guarantee. Free returns within 30 days.</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button id="addToCartBtn" class="flex-1 bg-primary hover:bg-gray-800 text-white font-medium py-4 rounded-xl transition-all shadow-md hover:shadow-lg flex justify-center items-center gap-2">
+                        <i class="ph-fill ph-bag text-lg"></i> Add to Bag
+                    </button>
+                    <button id="directBuyBtn" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-4 rounded-xl transition-all shadow-md hover:shadow-lg flex justify-center items-center gap-2">
+                        <i class="ph-fill ph-whatsapp-logo text-lg"></i> Buy Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-20 pb-10 mt-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Branding -->
+                <div class="md:col-span-2">
+                    <h3 class="text-3xl font-bold tracking-tighter mb-4">BLCKWHT.</h3>
+                    <p class="text-gray-400 max-w-sm">Designing everyday essentials with a focus on modern minimalism, functionality, and timeless aesthetics.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold text-gray-300 mb-6 uppercase tracking-wider text-sm">Shop</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">New Arrivals</a></li>
+                        <li><a href="index.html#featured" class="hover:text-white transition-colors">Best Sellers</a></li>
+                        <li><a href="index.html#katalog" class="hover:text-white transition-colors">All Products</a></li>
+                    </ul>
+                </div>
+                <!-- Connect -->
+                <div>
+                    <h4 class="font-semibold text-gray-300 mb-6 uppercase tracking-wider text-sm">Connect</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 BLCKWHT. All rights reserved. <br/> <span class="text-cyan-500 font-medium block mt-1">Powered By Google Antigravity</span></p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SHARED SCRIPT -->
+    <script src="script.js"></script>
+    
+    <!-- PAGE SPECIFIC SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const product = {"id":"p13","title":"Minimalist Totebag","price":150000,"image":"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80","desc":"Heavy canvas, single strap, pure geometric shape.","stock":35};
+            
+            const addToCartBtn = document.getElementById('addToCartBtn');
+            if(addToCartBtn) {
+                addToCartBtn.addEventListener('click', () => {
+                    let cart = JSON.parse(localStorage.getItem('blckwht_modern_cart')) || [];
+                    const existingItem = cart.find(item => item.id === product.id);
+                    if(existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({ ...product, quantity: 1 });
+                    }
+                    localStorage.setItem('blckwht_modern_cart', JSON.stringify(cart));
+                    
+                    // Simple visual feedback instead of raw reload
+                    addToCartBtn.innerHTML = '<i class="ph-fill ph-check-circle text-lg"></i> Added!';
+                    addToCartBtn.classList.replace('bg-primary', 'bg-green-600');
+                    setTimeout(() => location.reload(), 800);
+                });
+            }
+
+            const directBuyBtn = document.getElementById('directBuyBtn');
+            if(directBuyBtn) {
+                directBuyBtn.addEventListener('click', () => {
+                    const phoneNumber = "6281234567890";
+                    const message = 'Halo BLCKWHT, saya ingin memesan:\n\n' +
+                                    '1. ' + product.title + ' (x1) - Rp ' + product.price.toLocaleString('id-ID') + '\n\n' +
+                                    '*TOTAL: Rp ' + product.price.toLocaleString('id-ID') + '*\n\n' +
+                                    'Mohon informasi ongkos kirim dan pembayaran.';
+                    
+                    const waUrl = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+                    window.open(waUrl, '_blank');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
