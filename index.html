@@ -41,7 +41,7 @@
             border-radius: 9999px !important;
             box-shadow: 0 10px 40px rgba(0, 172, 193, 0.12);
             border: 1px solid rgba(0, 172, 193, 0.1);
-            padding: 0.15rem 1.5rem !important;
+            padding: 0.15rem 1.75rem !important;
         }
 
         .nav-link {
@@ -82,19 +82,37 @@
             transform: translateY(-3px) scale(1.02);
             box-shadow: 0 0 30px rgba(0, 172, 193, 0.6);
         }
+
+        .btn-cyan-persistent-glow {
+            background: #00838F;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 0 25px rgba(0, 172, 193, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-cyan-persistent-glow:hover {
+            transform: translateY(-8px);
+            /* Glow remains intense as per request, only animation is lift */
+        }
     </style>
 </head>
 
 <body data-page="1" class="text-primaryDark antialiased static-gradient">
 
     <!-- NAVIGATION -->
-    <div class="fixed top-6 left-0 right-0 z-50 px-6 flex justify-center">
+    <div class="fixed top-0 left-0 right-0 z-50 px-6 flex justify-center">
         <nav class="max-w-fit mx-auto pill-nav transition-all duration-300">
-            <div class="px-6 py-1 flex items-center justify-between">
+            <div class="px-6 py-1 flex items-center justify-between gap-10">
                 <!-- Brand -->
                 <a href="index.html" class="flex items-center">
                     <img src="images/nova-logo.png" alt="Nova"
-                        class="h-28 w-auto transform transition-transform hover:scale-105">
+                        class="h-36 w-auto transform transition-transform hover:scale-105">
                 </a>
 
                 <!-- Links -->
@@ -275,20 +293,14 @@
                 class="inline-block py-1 px-3 rounded-full bg-gray-100 text-xs font-semibold tracking-wider text-gray-600 uppercase">
                 New Collection 2026
             </span>
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
-                Tingkatkan gaya <br /> harian Anda.
-            </h1>
-            <p class="text-lg text-gray-500 max-w-md leading-relaxed">
-                Temukan perpaduan antara minimalisme radikal dan kenyamanan tanpa usaha. Dirancang untuk kaum urban
-                modern.
-            </p>
-            <div class="flex gap-4 pt-4">
-                <a href="#katalog"
-                    class="bg-primary hover:bg-primaryDark text-white px-8 py-4 rounded-full font-medium transition-transform hover:-translate-y-1 shadow-lg shadow-cyan-900/20">
-                    Shop Collection
+            <h1 class="text-8xl md:text-9xl font-black text-primaryDark leading-[0.9] tracking-tighter mb-10">Tingkatkan
+                gaya<br>harian Anda.</h1>
+            <div class="flex flex-wrap gap-6">
+                <a href="page2.html" class="px-10 py-5 btn-cyan-persistent-glow rounded-full text-lg shadow-2xl">
+                    Shop Collection <i class="ph ph-arrow-right ml-3 text-2xl"></i>
                 </a>
                 <a href="#featured"
-                    class="bg-white border-2 border-primary hover:border-primaryDark text-primary px-8 py-4 rounded-full font-medium transition-all shadow-sm hover:shadow">
+                    class="px-10 py-5 bg-white text-primaryDark font-black rounded-full text-lg hover:bg-cyan-50 transition-all border-2 border-primaryDark/5 hover:translate-y-[-8px]">
                     Explore Best Sellers
                 </a>
             </div>
@@ -323,7 +335,7 @@
                 <p class="text-primaryDark font-bold text-xl opacity-90 leading-relaxed">Most wanted essentials, refined
                     for your daily aesthetic. Crafted with purpose and precision.</p>
             </div>
-            <a href="page2.html" class="group flex items-center gap-6 px-8 py-4 btn-cyan-glow rounded-full">
+            <a href="page2.html" class="group flex items-center gap-6 px-8 py-4 btn-cyan-persistent-glow rounded-full">
                 Shop Collection <i
                     class="ph ph-arrow-right text-2xl transition-transform group-hover:translate-x-2"></i>
             </a>
