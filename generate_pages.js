@@ -20,20 +20,20 @@ const template = (product) => `<!DOCTYPE html>
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        primary: '#FF9408',
-                        primaryDark: '#1A1A1A',
-                        accent: '#FF9408',
-                        dark: '#1A1A1A'
+                        primary: '#FBD5BD', 
+                        primaryDark: '#262335',
+                        accent: '#8A83DA',
+                        dark: '#262335'
                     },
                     backgroundImage: {
-                        'gradient-theme': 'linear-gradient(to bottom, #F3F4F5, #FF9408, #F3F4F5, #FF9408)',
-                        'gradient-card': 'linear-gradient(to bottom, #F3F4F5, #FF9408)',
-                        'gradient-hover': 'linear-gradient(to right, #FF9408, #F3F4F5)'
+                        'gradient-theme': 'linear-gradient(to bottom, #F0FDFF, #AEEFF0)',
+                        'gradient-card': 'linear-gradient(to bottom, #C7C2CE, #FBD5BD)',
                     }
                 }
             }
         }
     </script>
+    <style>
         .static-gradient {
             background: linear-gradient(to bottom, #F0FDFF, #AEEFF0);
             background-attachment: fixed;
@@ -50,6 +50,10 @@ const template = (product) => `<!DOCTYPE html>
             transition: all 0.3s ease;
             font-weight: 700;
             font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border-radius: 9999px;
         }
         .nav-link:hover {
             background: #00ACC1;
@@ -169,7 +173,7 @@ const template = (product) => `<!DOCTYPE html>
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <button id="addToCartBtn" class="flex-1 bg-primary hover:bg-gray-800 text-white font-medium py-4 rounded-xl transition-all shadow-md hover:shadow-lg flex justify-center items-center gap-2">
+                    <button id="addToCartBtn" class="flex-1 bg-[#00ACC1] hover:bg-gray-800 text-white font-medium py-4 rounded-xl transition-all shadow-md hover:shadow-lg flex justify-center items-center gap-2">
                         <i class="ph-fill ph-bag text-lg"></i> Add to Bag
                     </button>
                     <button id="directBuyBtn" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-4 rounded-xl transition-all shadow-md hover:shadow-lg flex justify-center items-center gap-2">
@@ -244,7 +248,7 @@ const template = (product) => `<!DOCTYPE html>
                     
                     // Simple visual feedback instead of raw reload
                     addToCartBtn.innerHTML = '<i class="ph-fill ph-check-circle text-lg"></i> Added!';
-                    addToCartBtn.classList.replace('bg-primary', 'bg-green-600');
+                    addToCartBtn.classList.replace('bg-[#00ACC1]', 'bg-green-600');
                     setTimeout(() => location.reload(), 800);
                 });
             }
