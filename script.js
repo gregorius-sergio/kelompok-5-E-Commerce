@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutBtn = document.getElementById('checkoutBtn');
     const cartItemsCountLabel = document.getElementById('cartItemsCountLabel');
 
-    let cart = JSON.parse(localStorage.getItem('blckwht_modern_cart')) || [];
+    let cart = JSON.parse(localStorage.getItem('nova_modern_cart')) || [];
 
     function updateCartUI() {
         if (!cartItemsContainer) return;
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function saveCart() {
-        localStorage.setItem('blckwht_modern_cart', JSON.stringify(cart));
+        localStorage.setItem('nova_modern_cart', JSON.stringify(cart));
         updateCartUI();
     }
 
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             const phoneNumber = "6281234567890";
-            let message = "Halo BLCKWHT, saya ingin memesan:\\n\\n";
+            let message = "Halo Nova, saya ingin memesan:\\n\\n";
             let total = 0;
             cart.forEach((item, index) => {
                 message += `${index + 1}. ${item.title} (x${item.quantity}) - Rp ${(item.price * item.quantity).toLocaleString('id-ID')}\\n`;

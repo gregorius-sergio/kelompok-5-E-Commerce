@@ -9,7 +9,7 @@ const template = (product) => `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLCKWHT - ${product.title}</title>
+    <title>Nova - ${product.title}</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -35,7 +35,9 @@ const template = (product) => `<!DOCTYPE html>
     <!-- NAVIGATION -->
     <nav class="sticky top-0 z-50 glass-nav transition-all duration-300 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold tracking-tighter">BLCKWHT.</a>
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="images/nova-logo.png" alt="Nova" class="h-8">
+            </a>
             
             <div class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-600">
                 <a href="index.html" class="hover:text-primary transition-colors">Home</a>
@@ -140,7 +142,7 @@ const template = (product) => `<!DOCTYPE html>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <!-- Branding -->
                 <div class="md:col-span-2">
-                    <h3 class="text-3xl font-bold tracking-tighter mb-4">BLCKWHT.</h3>
+                    <h3 class="text-3xl font-bold tracking-tighter mb-4">Nova.</h3>
                     <p class="text-gray-400 max-w-sm">Designing everyday essentials with a focus on modern minimalism, functionality, and timeless aesthetics.</p>
                 </div>
                 <!-- Links -->
@@ -162,7 +164,7 @@ const template = (product) => `<!DOCTYPE html>
             </div>
             
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                <p>&copy; 2026 BLCKWHT. All rights reserved. <br/> <span class="text-cyan-500 font-medium block mt-1">Powered By Google Antigravity</span></p>
+                <p>&copy; 2026 Nova. All rights reserved. <br/> <span class="text-cyan-500 font-medium block mt-1">Powered By Google Antigravity</span></p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
@@ -178,18 +180,19 @@ const template = (product) => `<!DOCTYPE html>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const product = ${JSON.stringify(product)};
+            const cartKey = 'nova_modern_cart';
             
             const addToCartBtn = document.getElementById('addToCartBtn');
             if(addToCartBtn) {
                 addToCartBtn.addEventListener('click', () => {
-                    let cart = JSON.parse(localStorage.getItem('blckwht_modern_cart')) || [];
+                    let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
                     const existingItem = cart.find(item => item.id === product.id);
                     if(existingItem) {
                         existingItem.quantity += 1;
                     } else {
                         cart.push({ ...product, quantity: 1 });
                     }
-                    localStorage.setItem('blckwht_modern_cart', JSON.stringify(cart));
+                    localStorage.setItem(cartKey, JSON.stringify(cart));
                     
                     // Simple visual feedback instead of raw reload
                     addToCartBtn.innerHTML = '<i class="ph-fill ph-check-circle text-lg"></i> Added!';
@@ -202,7 +205,7 @@ const template = (product) => `<!DOCTYPE html>
             if(directBuyBtn) {
                 directBuyBtn.addEventListener('click', () => {
                     const phoneNumber = "6281234567890";
-                    const message = 'Halo BLCKWHT, saya ingin memesan:\\n\\n' +
+                    const message = 'Halo Nova, saya ingin memesan:\\n\\n' +
                                     '1. ' + product.title + ' (x1) - Rp ' + product.price.toLocaleString('id-ID') + '\\n\\n' +
                                     '*TOTAL: Rp ' + product.price.toLocaleString('id-ID') + '*\\n\\n' +
                                     'Mohon informasi ongkos kirim dan pembayaran.';
