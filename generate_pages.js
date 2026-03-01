@@ -40,41 +40,32 @@ const template = (product) => `<!DOCTYPE html>
             min-height: 100vh;
         }
         .pill-nav {
-            background: white !important;
-            border-radius: 9999px !important;
-            box-shadow: 0 10px 40px rgba(0, 172, 193, 0.12);
-            border: 1px solid rgba(0, 172, 193, 0.1);
-            padding: 0.15rem 1.5rem !important;
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         .nav-link {
-            padding: 0.4rem 1.25rem;
-            border-radius: 9999px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
+            padding: 0.5rem 1.25rem;
+            transition: all 0.3s ease;
             font-weight: 700;
             font-size: 0.9rem;
         }
         .nav-link:hover {
-            background: #00ACC1;
-            color: white !important;
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 172, 193, 0.4);
+            color: #00ACC1 !important;
         }
     </style>
 </head>
 <body class="text-primaryDark antialiased static-gradient">
 
     <!-- NAVIGATION -->
-    <div class="fixed top-0 left-0 right-0 z-50 px-6 flex justify-center">
-        <nav class="max-w-fit mx-auto pill-nav transition-all duration-300">
-            <div class="px-6 py-1 flex items-center justify-between gap-10">
-                <a href="index.html" class="flex items-center">
-                    <img src="images/nova-logo.png" alt="Nova" class="h-36 w-auto transform transition-transform hover:scale-105">
-                </a>
-                
-                <div class="hidden md:flex items-center space-x-1">
+    <nav class="fixed top-0 left-0 right-0 z-50 pill-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center">
+                <img src="images/nova-logo.png" alt="Nova" class="h-16 w-auto transform transition-transform hover:scale-105">
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-1">
                     <a href="index.html" class="nav-link text-primaryDark">
                         <i class="ph ph-house text-xl"></i> Home
                     </a>
@@ -123,8 +114,8 @@ const template = (product) => `<!DOCTYPE html>
                     </div>
                 </div>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
 
     <!-- PRODUCT DETAIL SECTION -->
     <main class="max-w-7xl mx-auto px-6 py-24 md:py-32 bg-transparent">

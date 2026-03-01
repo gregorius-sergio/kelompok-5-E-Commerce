@@ -37,29 +37,21 @@
         }
 
         .pill-nav {
-            background: white !important;
-            border-radius: 9999px !important;
-            box-shadow: 0 10px 40px rgba(0, 172, 193, 0.12);
-            border: 1px solid rgba(0, 172, 193, 0.1);
-            padding: 0.15rem 1.5rem !important;
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .nav-link {
-            padding: 0.4rem 1.25rem;
-            border-radius: 9999px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .nav-link:hover {
-            background: #00ACC1;
-            color: white !important;
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 172, 193, 0.4);
+            color: #00ACC1 !important;
         }
     </style>
 </head>
@@ -67,66 +59,65 @@
 <body data-page="3" class="text-primaryDark antialiased static-gradient">
 
     <!-- NAVIGATION -->
-    <div class="fixed top-0 left-0 right-0 z-50 px-6 flex justify-center">
-        <nav class="max-w-fit mx-auto pill-nav transition-all duration-300">
-            <div class="px-6 py-1 flex items-center justify-between gap-10">
-                <a href="index.html" class="flex items-center">
-                    <img src="images/nova-logo.png" alt="Nova"
-                        class="h-36 w-auto transform transition-transform hover:scale-105">
+    <nav class="fixed top-0 left-0 right-0 z-50 pill-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center">
+                <img src="images/nova-logo.png" alt="Nova"
+                    class="h-16 w-auto transform transition-transform hover:scale-105">
+            </a>
+
+            <div class="hidden md:flex items-center space-x-1">
+                <a href="index.html" class="nav-link text-primaryDark">
+                    <i class="ph ph-house text-xl"></i> Home
                 </a>
+                <a href="index.html#featured" class="nav-link text-primaryDark">
+                    <i class="ph ph-star text-xl"></i> Best Sellers
+                </a>
+                <a href="page2.html" class="nav-link text-primaryDark">
+                    <i class="ph ph-shopping-bag-open text-xl"></i> Shop All
+                </a>
+            </div>
 
-                <div class="hidden md:flex items-center space-x-1">
-                    <a href="index.html" class="nav-link text-primaryDark">
-                        <i class="ph ph-house text-xl"></i> Home
-                    </a>
-                    <a href="index.html#featured" class="nav-link text-primaryDark">
-                        <i class="ph ph-star text-xl"></i> Best Sellers
-                    </a>
-                    <a href="page2.html" class="nav-link text-primaryDark">
-                        <i class="ph ph-shopping-bag-open text-xl"></i> Shop All
-                    </a>
-                </div>
-
-                <div class="flex items-center space-x-4 text-primaryDark">
-                    <!-- Search Dropdown -->
-                    <div class="relative group" id="searchWrapper">
-                        <button class="hover:scale-110 transition-transform p-2" id="searchBtn">
-                            <i class="ph ph-magnifying-glass text-2xl font-bold"></i>
-                        </button>
-                        <!-- Hidden Input field that shows on click -->
-                        <div id="searchBox"
-                            class="absolute top-12 right-0 w-80 glass-dropdown rounded-2xl shadow-xl p-4 hidden opacity-0 transition-opacity duration-300">
-                            <input type="text" id="searchInput" placeholder="Search modern staples..."
-                                class="w-full bg-white/50 border border-white/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400">
-                            <div id="searchResults" class="max-h-60 overflow-y-auto mt-2 space-y-2"></div>
-                        </div>
-                    </div>
-                    <button class="hover:scale-110 transition-transform relative p-2" id="cartBtn">
-                        <i class="ph ph-shopping-bag text-2xl font-bold"></i>
-                        <span id="cartCount"
-                            class="absolute top-0 right-0 bg-primaryDark text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-black shadow-lg">0</span>
+            <div class="flex items-center space-x-4 text-primaryDark">
+                <!-- Search Dropdown -->
+                <div class="relative group" id="searchWrapper">
+                    <button class="hover:scale-110 transition-transform p-2" id="searchBtn">
+                        <i class="ph ph-magnifying-glass text-2xl font-bold"></i>
                     </button>
-
-                    <div id="cartDropdown"
-                        class="glass-dropdown hidden absolute top-10 right-0 w-80 rounded-2xl shadow-2xl p-6 flex flex-col gap-4">
-                        <div class="flex justify-between items-center border-b border-gray-100 pb-3">
-                            <h3 class="font-semibold text-lg">Your Bag</h3>
-                            <p class="text-xs text-gray-500" id="cartItemsCountLabel">0 items</p>
-                        </div>
-                        <div id="cartItemsContainer" class="max-h-64 overflow-y-auto pr-2 space-y-4"></div>
-                        <div class="border-t border-gray-100 pt-3">
-                            <div class="flex justify-between items-center font-bold mb-4">
-                                <span>Subtotal</span>
-                                <span id="cartTotal">Rp 0</span>
-                            </div>
-                            <button id="checkoutBtn"
-                                class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 rounded-lg transition-colors flex justify-center items-center gap-2">
-                                <i class="ph-fill ph-whatsapp-logo text-lg"></i> Checkout via WhatsApp
-                            </button>
-                        </div>
+                    <!-- Hidden Input field that shows on click -->
+                    <div id="searchBox"
+                        class="absolute top-12 right-0 w-80 glass-dropdown rounded-2xl shadow-xl p-4 hidden opacity-0 transition-opacity duration-300">
+                        <input type="text" id="searchInput" placeholder="Search modern staples..."
+                            class="w-full bg-white/50 border border-white/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400">
+                        <div id="searchResults" class="max-h-60 overflow-y-auto mt-2 space-y-2"></div>
                     </div>
                 </div>
-        </nav>
+                <button class="hover:scale-110 transition-transform relative p-2" id="cartBtn">
+                    <i class="ph ph-shopping-bag text-2xl font-bold"></i>
+                    <span id="cartCount"
+                        class="absolute top-0 right-0 bg-primaryDark text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-black shadow-lg">0</span>
+                </button>
+
+                <div id="cartDropdown"
+                    class="glass-dropdown hidden absolute top-10 right-0 w-80 rounded-2xl shadow-2xl p-6 flex flex-col gap-4">
+                    <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                        <h3 class="font-semibold text-lg">Your Bag</h3>
+                        <p class="text-xs text-gray-500" id="cartItemsCountLabel">0 items</p>
+                    </div>
+                    <div id="cartItemsContainer" class="max-h-64 overflow-y-auto pr-2 space-y-4"></div>
+                    <div class="border-t border-gray-100 pt-3">
+                        <div class="flex justify-between items-center font-bold mb-4">
+                            <span>Subtotal</span>
+                            <span id="cartTotal">Rp 0</span>
+                        </div>
+                        <button id="checkoutBtn"
+                            class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 rounded-lg transition-colors flex justify-center items-center gap-2">
+                            <i class="ph-fill ph-whatsapp-logo text-lg"></i> Checkout via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </nav>
     </div>
 
     <!-- CATALOG AREA -->
