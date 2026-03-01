@@ -31,7 +31,7 @@
     </script>
     <style>
         .animated-bg {
-            background: linear-gradient(-45deg, #C7C2CE, #FBD5BD, #C7C2CE, #FBD5BD);
+            background: linear-gradient(-45deg, #F3F4F5, #FF9408, #F3F4F5, #FF9408);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
@@ -51,27 +51,31 @@
         }
 
         .glass-nav-float {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .nav-link {
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 0.75rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .nav-link:hover {
-            background: linear-gradient(135deg, #8A83DA, #463699);
+            background: #FF9408;
             color: white !important;
-            box-shadow: 0 4px 15px rgba(138, 131, 218, 0.4);
+            box-shadow: 0 4px 20px rgba(255, 148, 8, 0.4);
+            transform: translateY(-1px);
         }
     </style>
 </head>
 
-<body data-page="3" class="bg-white text-primary antialiased animated-bg">
+<body data-page="3" class="text-primaryDark antialiased animated-bg">
 
     <!-- NAVIGATION -->
     <div class="fixed top-4 left-0 right-0 z-50 px-6">
@@ -81,31 +85,36 @@
                     <img src="images/nova-logo.png" alt="Nova" class="h-16">
                 </a>
 
-                <div class="hidden md:flex items-center space-x-2 text-sm font-semibold text-gray-800">
-                    <a href="index.html" class="nav-link text-primaryDark">Home</a>
-                    <a href="index.html#featured" class="nav-link text-primaryDark">Best Sellers</a>
-                    <a href="index.html#katalog" class="nav-link text-primaryDark">Shop All</a>
+                <div class="hidden md:flex items-center space-x-3 text-lg font-bold text-primaryDark">
+                    <a href="index.html" class="nav-link">
+                        <i class="ph ph-house text-2xl"></i> Home
+                    </a>
+                    <a href="index.html#featured" class="nav-link">
+                        <i class="ph ph-star text-2xl"></i> Best Sellers
+                    </a>
+                    <a href="index.html#katalog" class="nav-link">
+                        <i class="ph ph-shopping-bag-open text-2xl"></i> Shop All
+                    </a>
                 </div>
 
-                <div class="flex items-center space-x-6 relative">
+                <div class="flex items-center space-x-6 relative text-primaryDark">
                     <!-- Search Dropdown -->
                     <div class="relative group" id="searchWrapper">
-                        <button class="text-gray-600 hover:text-primary transition-colors flex items-center"
-                            id="searchBtn">
-                            <i class="ph ph-magnifying-glass text-xl"></i>
+                        <button class="hover:scale-110 transition-transform flex items-center" id="searchBtn">
+                            <i class="ph ph-magnifying-glass text-3xl font-bold"></i>
                         </button>
                         <!-- Hidden Input field that shows on click -->
                         <div id="searchBox"
-                            class="absolute top-10 right-0 w-72 glass-dropdown rounded-xl shadow-xl p-3 hidden opacity-0 transition-opacity duration-300">
+                            class="absolute top-12 right-0 w-80 glass-dropdown rounded-2xl shadow-xl p-4 hidden opacity-0 transition-opacity duration-300">
                             <input type="text" id="searchInput" placeholder="Search modern staples..."
-                                class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary rounded-xl">
+                                class="w-full bg-white/50 border border-white/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400">
                             <div id="searchResults" class="max-h-60 overflow-y-auto mt-2 space-y-2"></div>
                         </div>
                     </div>
-                    <button class="text-gray-600 hover:text-primary transition-colors relative" id="cartBtn">
-                        <i class="ph ph-shopping-bag text-xl"></i>
+                    <button class="hover:scale-110 transition-transform relative" id="cartBtn">
+                        <i class="ph ph-shopping-bag text-3xl font-bold"></i>
                         <span id="cartCount"
-                            class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                            class="absolute -top-2 -right-2 bg-orange-500 text-white text-[11px] w-5 h-5 rounded-full flex items-center justify-center font-black shadow-lg">0</span>
                     </button>
 
                     <div id="cartDropdown"
@@ -131,10 +140,13 @@
     </div>
 
     <!-- CATALOG AREA -->
-    <main class="max-w-7xl mx-auto px-6 py-20" id="katalog">
-        <div class="mb-12 text-center md:text-left">
-            <h2 class="text-3xl font-bold tracking-tight">The Archive / Page 3</h2>
-            <p class="text-gray-500 mt-2">Explore our full range of minimalist apparel.</p>
+    <main class="max-w-7xl mx-auto px-6 py-24 bg-transparent" id="katalog">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+                <h2 class="text-4xl font-bold tracking-tight mb-4">Complete Catalog</h2>
+                <p class="text-primaryDark/80 font-medium max-w-lg">Discover our full range of essentials designed for
+                    modern life.</p>
+            </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8" id="productGrid">
