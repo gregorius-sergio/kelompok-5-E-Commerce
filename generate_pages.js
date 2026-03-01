@@ -34,80 +34,76 @@ const template = (product) => `<!DOCTYPE html>
             }
         }
     </script>
-    <style>
-        .animated-bg {
-            background: linear-gradient(-45deg, #F3F4F5, #FF9408, #F3F4F5, #FF9408);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+        .static-gradient {
+            background: linear-gradient(to bottom, #F3F4F5, #FF9408);
+            background-attachment: fixed;
+            min-height: 100vh;
         }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .glass-nav-float {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+        .pill-nav {
+            background: white !important;
+            border-radius: 9999px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 0.25rem 1rem !important;
         }
         .nav-link {
-            padding: 0.6rem 1.2rem;
-            border-radius: 0.75rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
+            font-weight: 700;
+            font-size: 0.95rem;
         }
         .nav-link:hover {
             background: #FF9408;
             color: white !important;
-            box-shadow: 0 4px 20px rgba(255, 148, 8, 0.4);
-            transform: translateY(-1px);
+            transform: scale(1.05);
         }
     </style>
 </head>
-<body class="text-primaryDark antialiased animated-bg">
+<body class="text-primaryDark antialiased static-gradient">
 
     <!-- NAVIGATION -->
-    <div class="fixed top-4 left-0 right-0 z-50 px-6">
-        <nav class="max-w-7xl mx-auto glass-nav-float rounded-2xl shadow-xl transition-all duration-300">
-            <div class="px-6 py-3 flex items-center justify-between">
-                <a href="index.html" class="flex items-center gap-2">
-                    <img src="images/nova-logo.png" alt="Nova" class="h-16">
+    <div class="fixed top-6 left-0 right-0 z-50 px-6">
+        <nav class="max-w-4xl mx-auto pill-nav transition-all duration-300">
+            <div class="px-6 py-2 flex items-center justify-between">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/nova-logo.png" alt="Nova" class="h-24 w-auto transform transition-transform hover:scale-105">
                 </a>
                 
-                <div class="hidden md:flex items-center space-x-3 text-lg font-bold text-primaryDark">
-                    <a href="index.html" class="nav-link">
-                        <i class="ph ph-house text-2xl"></i> Home
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link text-primaryDark">
+                        <i class="ph ph-house text-xl"></i> Home
                     </a>
-                    <a href="index.html#featured" class="nav-link">
-                        <i class="ph ph-star text-2xl"></i> Best Sellers
+                    <a href="index.html#featured" class="nav-link text-primaryDark">
+                        <i class="ph ph-star text-xl"></i> Best Sellers
                     </a>
-                    <a href="index.html#katalog" class="nav-link">
-                        <i class="ph ph-shopping-bag-open text-2xl"></i> Shop All
+                    <a href="index.html#katalog" class="nav-link text-primaryDark">
+                        <i class="ph ph-shopping-bag-open text-xl"></i> Shop All
                     </a>
                 </div>
 
-            <div class="flex items-center space-x-6 relative text-primaryDark">
-                <!-- Search Dropdown -->
-                <div class="relative group" id="searchWrapper">
-                    <button class="hover:scale-110 transition-transform flex items-center" id="searchBtn">
-                        <i class="ph ph-magnifying-glass text-3xl font-bold"></i>
-                    </button>
-                    <!-- Hidden Input field that shows on click -->
-                    <div id="searchBox"
-                        class="absolute top-12 right-0 w-80 glass-dropdown rounded-2xl shadow-xl p-4 hidden opacity-0 transition-opacity duration-300">
-                        <input type="text" id="searchInput" placeholder="Search modern staples..."
-                            class="w-full bg-white/50 border border-white/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400">
-                        <div id="searchResults" class="max-h-60 overflow-y-auto mt-2 space-y-2"></div>
+                <div class="flex items-center space-x-4 text-primaryDark">
+                    <!-- Search Dropdown -->
+                    <div class="relative group" id="searchWrapper">
+                        <button class="hover:scale-110 transition-transform flex items-center p-2" id="searchBtn">
+                            <i class="ph ph-magnifying-glass text-2xl font-bold"></i>
+                        </button>
+                        <!-- Hidden Input field that shows on click -->
+                        <div id="searchBox"
+                            class="absolute top-12 right-0 w-80 glass-dropdown rounded-2xl shadow-xl p-4 hidden opacity-0 transition-opacity duration-300">
+                            <input type="text" id="searchInput" placeholder="Search modern staples..."
+                                class="w-full bg-white/50 border border-white/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400">
+                            <div id="searchResults" class="max-h-60 overflow-y-auto mt-2 space-y-2"></div>
+                        </div>
                     </div>
-                </div>
-                <button class="hover:scale-110 transition-transform relative" id="cartBtn">
-                    <i class="ph ph-shopping-bag text-3xl font-bold"></i>
-                    <span id="cartCount"
-                        class="absolute -top-2 -right-2 bg-orange-500 text-white text-[11px] w-5 h-5 rounded-full flex items-center justify-center font-black shadow-lg">0</span>
-                </button>
+                    <button class="hover:scale-110 transition-transform relative p-2" id="cartBtn">
+                        <i class="ph ph-shopping-bag text-2xl font-bold"></i>
+                        <span id="cartCount"
+                            class="absolute top-0 right-0 bg-primaryDark text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-black shadow-lg">0</span>
+                    </button>
 
                 <div id="cartDropdown" class="glass-dropdown hidden absolute top-12 right-0 w-80 rounded-2xl shadow-2xl p-6 flex flex-col gap-4">
                     <div class="flex justify-between items-center border-b border-gray-100 pb-3">
