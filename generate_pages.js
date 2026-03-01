@@ -36,7 +36,7 @@ const template = (product) => `<!DOCTYPE html>
     <nav class="sticky top-0 z-50 glass-nav transition-all duration-300 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-2">
-                <img src="images/nova-logo.png" alt="Nova" class="h-8">
+                <img src="images/nova-logo.png" alt="Nova" class="h-12">
             </a>
             
             <div class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-600">
@@ -154,11 +154,15 @@ const template = (product) => `<!DOCTYPE html>
                         <li><a href="index.html#katalog" class="hover:text-white transition-colors">All Products</a></li>
                     </ul>
                 </div>
-                <!-- Connect -->
+                <!-- Group Members -->
                 <div>
-                    <h4 class="font-semibold text-gray-300 mb-6 uppercase tracking-wider text-sm">Connect</h4>
-                    <ul class="space-y-3 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Contact Support</a></li>
+                    <h4 class="font-semibold text-gray-300 mb-6 uppercase tracking-wider text-sm">Kelompok 5</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li>Gregorius Sergio (Ketua)</li>
+                        <li>Devi Angelica</li>
+                        <li>Evelyn Valerian</li>
+                        <li>Hendra Surya Perkasa</li>
+                        <li>Vabian Gilardino</li>
                     </ul>
                 </div>
             </div>
