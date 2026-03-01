@@ -19,31 +19,65 @@ const template = (product) => `<!DOCTYPE html>
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: { 
-                        primary: '#0e7490', /* Cyan 700 */
-                        primaryDark: '#083344', /* Cyan 900 */
-                        accent: '#10b981', /* Emerald/Green 500 */
-                        dark: '#0f172a'
+                    colors: {
+                        primary: '#FBD5BD',
+                        primaryDark: '#262335',
+                        accent: '#8A83DA',
+                        dark: '#262335'
+                    },
+                    backgroundImage: {
+                        'gradient-theme': 'linear-gradient(to bottom, #FBD5BD, #C7C2CE, #8A83DA, #463699, #262335)',
+                        'gradient-card': 'linear-gradient(to bottom, #C7C2CE, #FBD5BD)',
+                        'gradient-hover': 'linear-gradient(to right, #8A83DA, #463699)'
                     }
                 }
             }
         }
     </script>
+    <style>
+        .animated-bg {
+            background: linear-gradient(-45deg, #FBD5BD, #C7C2CE, #8A83DA, #463699, #262335);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glass-nav-float {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .nav-link {
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background: linear-gradient(135deg, #8A83DA, #463699);
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(138, 131, 218, 0.4);
+        }
+    </style>
 </head>
-<body class="bg-white text-primary antialiased animated-bg">
+<body class="text-primaryDark antialiased animated-bg">
 
     <!-- NAVIGATION -->
-    <nav class="sticky top-0 z-50 glass-nav transition-all duration-300 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2">
-                <img src="images/nova-logo.png" alt="Nova" class="h-12">
-            </a>
-            
-            <div class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-600">
-                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
-                <a href="index.html#featured" class="hover:text-primary transition-colors">Best Sellers</a>
-                <a href="index.html#katalog" class="hover:text-primary transition-colors">Shop All</a>
-            </div>
+    <div class="fixed top-4 left-0 right-0 z-50 px-6">
+        <nav class="max-w-7xl mx-auto glass-nav-float rounded-2xl shadow-xl transition-all duration-300">
+            <div class="px-6 py-3 flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="images/nova-logo.png" alt="Nova" class="h-12">
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-2 text-sm font-semibold text-gray-800">
+                    <a href="index.html" class="nav-link text-primaryDark">Home</a>
+                    <a href="index.html#featured" class="nav-link text-primaryDark">Best Sellers</a>
+                    <a href="index.html#katalog" class="nav-link text-primaryDark">Shop All</a>
+                </div>
 
             <div class="flex items-center space-x-6 relative">
                 <!-- Search Dropdown -->
@@ -79,8 +113,8 @@ const template = (product) => `<!DOCTYPE html>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
     <!-- PRODUCT DETAIL SECTION -->
     <main class="max-w-7xl mx-auto px-6 py-12 md:py-24">
@@ -137,7 +171,7 @@ const template = (product) => `<!DOCTYPE html>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-dark text-white pt-20 pb-10 mt-10">
+    <footer class="bg-transparent text-white pt-20 pb-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <!-- Branding -->

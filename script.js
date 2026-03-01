@@ -200,12 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
             card.innerHTML = `
                 ${badgeHTML}
                 
-                <a href="product${p.id.replace('p', '')}.html" class="aspect-[4/5] bg-gray-50 overflow-hidden relative block w-full group-hover:bg-gray-100 transition-colors">
+                <a href="product${p.id.replace('p', '')}.html" class="aspect-[4/5] product-card-gradient overflow-hidden relative block w-full group-hover:opacity-90 transition-all">
                     <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     
                     <!-- Quick Add Slide Up -->
                     <div class="absolute inset-x-0 bottom-0 p-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex justify-center z-20 bg-gradient-to-t from-black/20 to-transparent">
-                        <button class="btn-add-cart w-full bg-white/95 backdrop-blur text-primaryDark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-all shadow-xl flex items-center justify-center gap-2" data-id="${p.id}">
+                        <button class="btn-add-cart w-full bg-white/95 backdrop-blur text-primaryDark font-bold py-3 rounded-xl hover:bg-accent hover:text-white transition-all shadow-xl flex items-center justify-center gap-2" data-id="${p.id}">
                             <i class="ph-fill ph-shopping-bag pointer-events-none text-lg"></i> Quick Add
                         </button>
                     </div>

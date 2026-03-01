@@ -16,81 +16,133 @@
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        primary: '#0e7490', /* Cyan 700 */
-                        primaryDark: '#083344', /* Cyan 900 */
-                        accent: '#10b981', /* Emerald/Green 500 */
-                        dark: '#0f172a'
+                        primary: '#FBD5BD', /* Light peach from palette */
+                        primaryDark: '#262335', /* Dark violet from palette */
+                        accent: '#8A83DA', /* Soft purple */
+                        dark: '#262335'
+                    },
+                    backgroundImage: {
+                        'gradient-theme': 'linear-gradient(to bottom, #FBD5BD, #C7C2CE, #8A83DA, #463699, #262335)',
+                        'gradient-card': 'linear-gradient(to bottom, #C7C2CE, #FBD5BD)',
+                        'gradient-hover': 'linear-gradient(to right, #8A83DA, #463699)'
                     }
                 }
             }
         }
     </script>
+    <style>
+        .animated-bg {
+            background: linear-gradient(-45deg, #FBD5BD, #C7C2CE, #8A83DA, #463699, #262335);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .glass-nav-float {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, #8A83DA, #463699);
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(138, 131, 218, 0.4);
+        }
+
+        .product-card-gradient {
+            background: linear-gradient(to bottom, #C7C2CE, #FBD5BD);
+        }
+    </style>
 </head>
 
-<body data-page="1" class="bg-white text-primary antialiased animated-bg">
+<body data-page="1" class="bg-white text-primaryDark antialiased animated-bg">
 
     <!-- NAVIGATION -->
-    <nav class="sticky top-0 z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <!-- Brand -->
-            <a href="index.html" class="flex items-center gap-2">
-                <img src="images/nova-logo.png" alt="Nova" class="h-12">
-            </a>
+    <div class="fixed top-4 left-0 right-0 z-50 px-6">
+        <nav class="max-w-7xl mx-auto glass-nav-float rounded-2xl shadow-xl transition-all duration-300">
+            <div class="px-6 py-3 flex items-center justify-between">
+                <!-- Brand -->
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="images/nova-logo.png" alt="Nova" class="h-12">
+                </a>
 
-            <!-- Links -->
-            <div class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-600">
-                <a href="index.html" class="text-primary hover:text-gray-900 transition-colors">Home</a>
-                <a href="#featured" class="hover:text-primary transition-colors">Best Sellers</a>
-                <a href="#katalog" class="hover:text-primary transition-colors">Shop All</a>
-            </div>
-
-            <!-- Icons/Cart & Search -->
-            <div class="flex items-center space-x-6 relative">
-                <!-- Search Dropdown -->
-                <div class="relative group" id="searchWrapper">
-                    <button class="text-gray-600 hover:text-primary transition-colors flex items-center" id="searchBtn">
-                        <i class="ph ph-magnifying-glass text-xl"></i>
-                    </button>
-                    <!-- Hidden Input field that shows on click -->
-                    <div id="searchBox"
-                        class="absolute top-10 right-0 w-72 glass-dropdown rounded-xl shadow-xl p-3 hidden opacity-0 transition-opacity duration-300">
-                        <input type="text" id="searchInput" placeholder="Search modern staples..."
-                            class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary rounded-xl">
-                        <div id="searchResults" class="max-h-60 overflow-y-auto mt-2 space-y-2"></div>
-                    </div>
+                <!-- Links -->
+                <div class="hidden md:flex items-center space-x-2 text-sm font-semibold text-gray-800">
+                    <a href="index.html" class="nav-link text-primaryDark">Home</a>
+                    <a href="#featured" class="nav-link text-primaryDark">Best Sellers</a>
+                    <a href="#katalog" class="nav-link text-primaryDark">Shop All</a>
                 </div>
-                <button class="text-gray-600 hover:text-primary transition-colors relative" id="cartBtn">
-                    <i class="ph ph-shopping-bag text-xl"></i>
-                    <span id="cartCount"
-                        class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
-                </button>
 
-                <!-- Cart Dropdown -->
-                <div id="cartDropdown"
-                    class="glass-dropdown hidden absolute top-10 right-0 w-80 rounded-2xl shadow-2xl p-6 flex flex-col gap-4">
-                    <div class="flex justify-between items-center border-b border-gray-100 pb-3">
-                        <h3 class="font-semibold text-lg">Your Bag</h3>
-                        <p class="text-xs text-gray-500" id="cartItemsCountLabel">0 items</p>
-                    </div>
-
-                    <div id="cartItemsContainer" class="max-h-64 overflow-y-auto pr-2 space-y-4">
-                        <!-- JS Injects Here -->
-                    </div>
-
-                    <div class="border-t border-gray-100 pt-3">
-                        <div class="flex justify-between items-center font-bold mb-4">
-                            <span>Subtotal</span>
-                            <span id="cartTotal">Rp 0</span>
-                        </div>
-                        <button id="checkoutBtn"
-                            class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 rounded-lg transition-colors flex justify-center items-center gap-2">
-                            <i class="ph-fill ph-whatsapp-logo text-lg"></i> Checkout via WhatsApp
+                <!-- Icons/Cart & Search -->
+                <div class="flex items-center space-x-6 relative">
+                    <!-- Search Dropdown -->
+                    <div class="relative group" id="searchWrapper">
+                        <button class="text-gray-600 hover:text-primary transition-colors flex items-center"
+                            id="searchBtn">
+                            <i class="ph ph-magnifying-glass text-xl"></i>
                         </button>
+                        <!-- Hidden Input field that shows on click -->
+                        <div id="searchBox"
+                            class="absolute top-10 right-0 w-72 glass-dropdown rounded-xl shadow-xl p-3 hidden opacity-0 transition-opacity duration-300">
+                            <input type="text" id="searchInput" placeholder="Search modern staples..."
+                                class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary rounded-xl">
+                            <div id="searchResults" class="max-h-60 overflow-y-auto mt-2 space-y-2"></div>
+                        </div>
+                    </div>
+                    <button class="text-gray-600 hover:text-primary transition-colors relative" id="cartBtn">
+                        <i class="ph ph-shopping-bag text-xl"></i>
+                        <span id="cartCount"
+                            class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                    </button>
+
+                    <!-- Cart Dropdown -->
+                    <div id="cartDropdown"
+                        class="glass-dropdown hidden absolute top-10 right-0 w-80 rounded-2xl shadow-2xl p-6 flex flex-col gap-4">
+                        <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                            <h3 class="font-semibold text-lg">Your Bag</h3>
+                            <p class="text-xs text-gray-500" id="cartItemsCountLabel">0 items</p>
+                        </div>
+
+                        <div id="cartItemsContainer" class="max-h-64 overflow-y-auto pr-2 space-y-4">
+                            <!-- JS Injects Here -->
+                        </div>
+
+                        <div class="border-t border-gray-100 pt-3">
+                            <div class="flex justify-between items-center font-bold mb-4">
+                                <span>Subtotal</span>
+                                <span id="cartTotal">Rp 0</span>
+                            </div>
+                            <button id="checkoutBtn"
+                                class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 rounded-lg transition-colors flex justify-center items-center gap-2">
+                                <i class="ph-fill ph-whatsapp-logo text-lg"></i> Checkout via WhatsApp
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
     <!-- PROMOTIONAL HERO SLIDER (NEW ADDITION) -->
     <section class="max-w-7xl mx-auto px-6 mt-8 mb-4">
@@ -98,15 +150,16 @@
             <div id="promoslider" class="flex w-full h-full transition-transform duration-700 ease-in-out">
                 <!-- Slide 1 -->
                 <div class="w-full h-full flex-shrink-0 relative">
-                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=1600&q=80" alt="Promo 1"
-                        class="w-full h-full object-cover opacity-60">
-                    <div class="absolute inset-0 flex flex-col justify-center items-center text-white p-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1550928431-ee0ec6db30d3?q=80&w=2000" alt="Promo 1"
+                        class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 flex flex-col justify-center items-center text-white p-6 text-center bg-black/30 backdrop-blur-[2px]">
                         <span
-                            class="bg-accent px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-4 shadow">Obral
-                            Pertengahan Musim</span>
-                        <h2 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">Diskon Hingga 50%</h2>
-                        <p class="text-xl max-w-lg drop-shadow">Perbarui lemari pakaian Anda dengan koleksi minimalis
-                            premium kami. Waktu terbatas.</p>
+                            class="bg-primary/90 text-primaryDark px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-4 shadow">Mid-Season
+                            Sale</span>
+                        <h2 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Diskon Hingga 50%</h2>
+                        <p class="text-xl max-w-lg drop-shadow font-medium">Tingkatkan gaya Anda dengan koleksi
+                            minimalis premium kami. Waktu terbatas!</p>
                     </div>
                 </div>
                 <!-- Slide 2 -->
@@ -354,7 +407,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-dark text-white pt-20 pb-10">
+    <footer class="bg-transparent text-white pt-20 pb-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <!-- Branding -->
