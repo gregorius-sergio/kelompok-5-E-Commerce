@@ -36,7 +36,7 @@ const template = (product) => `<!DOCTYPE html>
     </script>
     <style>
         .animated-bg {
-            background: linear-gradient(-45deg, #FBD5BD, #C7C2CE, #8A83DA, #463699, #262335);
+            background: linear-gradient(-45deg, #C7C2CE, #FBD5BD, #C7C2CE, #FBD5BD);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
@@ -70,7 +70,7 @@ const template = (product) => `<!DOCTYPE html>
         <nav class="max-w-7xl mx-auto glass-nav-float rounded-2xl shadow-xl transition-all duration-300">
             <div class="px-6 py-3 flex items-center justify-between">
                 <a href="index.html" class="flex items-center gap-2">
-                    <img src="images/nova-logo.png" alt="Nova" class="h-12">
+                    <img src="images/nova-logo.png" alt="Nova" class="h-16">
                 </a>
                 
                 <div class="hidden md:flex items-center space-x-2 text-sm font-semibold text-gray-800">
@@ -171,7 +171,7 @@ const template = (product) => `<!DOCTYPE html>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-transparent text-white pt-20 pb-10">
+    <footer class="bg-dark text-white pt-20 pb-10 mt-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <!-- Branding -->
