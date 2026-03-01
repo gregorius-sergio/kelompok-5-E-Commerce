@@ -39,8 +39,8 @@
         .pill-nav {
             background: white !important;
             border-radius: 9999px !important;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            box-shadow: 0 10px 40px rgba(0, 172, 193, 0.12);
+            border: 1px solid rgba(0, 172, 193, 0.1);
             padding: 0.15rem 1.5rem !important;
         }
 
@@ -56,9 +56,10 @@
         }
 
         .nav-link:hover {
-            background: #1A1A1A;
+            background: #00ACC1;
             color: white !important;
             transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 172, 193, 0.4);
         }
 
         .product-card-gradient {
@@ -66,19 +67,20 @@
             opacity: 0.8;
         }
 
-        .btn-monochrome {
-            background: #1A1A1A;
+        .btn-cyan-glow {
+            background: #00838F;
             color: white;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            box-shadow: 0 0 20px rgba(0, 131, 143, 0.3);
         }
 
-        .btn-monochrome:hover {
-            background: #333333;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        .btn-cyan-glow:hover {
+            background: #00ACC1;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 30px rgba(0, 172, 193, 0.6);
         }
     </style>
 </head>
@@ -86,8 +88,8 @@
 <body data-page="1" class="text-primaryDark antialiased static-gradient">
 
     <!-- NAVIGATION -->
-    <div class="fixed top-6 left-0 right-0 z-50 px-6">
-        <nav class="max-w-6xl mx-auto pill-nav transition-all duration-300">
+    <div class="fixed top-6 left-0 right-0 z-50 px-6 flex justify-center">
+        <nav class="max-w-fit mx-auto pill-nav transition-all duration-300">
             <div class="px-6 py-1 flex items-center justify-between">
                 <!-- Brand -->
                 <a href="index.html" class="flex items-center">
@@ -321,7 +323,7 @@
                 <p class="text-primaryDark font-bold text-xl opacity-90 leading-relaxed">Most wanted essentials, refined
                     for your daily aesthetic. Crafted with purpose and precision.</p>
             </div>
-            <a href="page2.html" class="group flex items-center gap-6 px-8 py-4 btn-monochrome rounded-full">
+            <a href="page2.html" class="group flex items-center gap-6 px-8 py-4 btn-cyan-glow rounded-full">
                 Shop Collection <i
                     class="ph ph-arrow-right text-2xl transition-transform group-hover:translate-x-2"></i>
             </a>

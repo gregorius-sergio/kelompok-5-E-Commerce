@@ -36,8 +36,8 @@
         .pill-nav {
             background: white !important;
             border-radius: 9999px !important;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            box-shadow: 0 10px 40px rgba(0, 172, 193, 0.12);
+            border: 1px solid rgba(0, 172, 193, 0.1);
             padding: 0.15rem 1.5rem !important;
         }
         .nav-link {
@@ -51,17 +51,18 @@
             font-size: 0.9rem;
         }
         .nav-link:hover {
-            background: #1A1A1A;
+            background: #00ACC1;
             color: white !important;
             transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 172, 193, 0.4);
         }
     </style>
 </head>
 <body class="text-primaryDark antialiased static-gradient">
 
     <!-- NAVIGATION -->
-    <div class="fixed top-6 left-0 right-0 z-50 px-6">
-        <nav class="max-w-6xl mx-auto pill-nav transition-all duration-300">
+    <div class="fixed top-6 left-0 right-0 z-50 px-6 flex justify-center">
+        <nav class="max-w-fit mx-auto pill-nav transition-all duration-300">
             <div class="px-6 py-1 flex items-center justify-between">
                 <a href="index.html" class="flex items-center">
                     <img src="images/nova-logo.png" alt="Nova" class="h-28 w-auto transform transition-transform hover:scale-105">
