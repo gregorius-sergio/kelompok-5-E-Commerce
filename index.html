@@ -72,6 +72,17 @@
             box-shadow: 0 0 30px rgba(0, 172, 193, 0.8);
         }
 
+        .btn-pagination-glow {
+            border: 2px solid #00ACC1 !important;
+            box-shadow: 0 0 15px rgba(0, 172, 193, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-pagination-glow:hover {
+            box-shadow: 0 0 25px rgba(0, 172, 193, 0.7);
+            transform: scale(1.05);
+        }
+
         .product-card-gradient {
             background: linear-gradient(to bottom, #F0FDFF, #AEEFF0);
             opacity: 0.8;
@@ -323,7 +334,7 @@
                     Shop Collection
                 </a>
                 <a href="#featured"
-                    class="bg-white border-2 border-primary hover:border-primaryDark text-primary px-8 py-4 rounded-full font-medium transition-all shadow-sm hover:shadow">
+                    class="bg-white border-2 border-primary text-primary px-8 py-4 rounded-full font-medium transition-all shadow-sm hover:shadow btn-glow-cyan">
                     Explore Best Sellers
                 </a>
             </div>
@@ -375,11 +386,11 @@
     <!-- Pagination -->
     <div class="flex justify-center items-center mt-20 gap-4">
         <a href="index.html"
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white font-bold shadow-lg shadow-primary/20">1</a>
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white font-bold shadow-lg shadow-primary/20 btn-pagination-glow">1</a>
         <a href="page2.html"
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-white border-2 border-primary text-primary hover:bg-cyan-50 transition-colors">2</a>
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary font-bold transition-colors btn-pagination-glow">2</a>
         <a href="page3.html"
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-white border-2 border-primary text-primary hover:bg-cyan-50 transition-colors">3</a>
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary font-bold transition-colors btn-pagination-glow">3</a>
     </div>
     </main>
 
