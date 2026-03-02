@@ -138,7 +138,7 @@ const template = (product) => `<!DOCTYPE html>
             <span>/</span>
             <a href="index.html#katalog" class="hover:text-[#00ACC1] transition-colors">Shop All</a>
             <span>/</span>
-            <span class="text-[#00ACC1] font-medium">\${product.title}</span>
+            <span class="text-[#00ACC1] font-medium">${product.title}</span>
         </div>
 
         <div class="flex flex-col md:flex-row gap-16">
