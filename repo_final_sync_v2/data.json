@@ -1,0 +1,130 @@
+[
+    {
+        "id": "p1",
+        "title": "Kaos Polos Cotton Combed 30s",
+        "price": 89000,
+        "image": "images/image1.jpeg",
+        "desc": "Merek: Urban Basic. Kaos berbahan cotton combed 30s yang lembut, adem, dan menyerap keringat. Cocok untuk aktivitas sehari-hari. Jahitan rapi dan tidak mudah melar. Tersedia ukuran S-XL dengan berbagai pilihan warna.",
+        "stock": 25
+    },
+    {
+        "id": "p2",
+        "title": "Kemeja Flanel Casual Pria",
+        "price": 179000,
+        "image": "images/image2.jpeg",
+        "desc": "Kemeja flanel motif kotak-kotak dengan bahan nyaman dan tidak panas. Cocok untuk gaya santai maupun semi-formal. Dilengkapi saku depan dan kancing berkualitas",
+        "stock": 15
+    },
+    {
+        "id": "p3",
+        "title": "Celana Jeans Slim Fit Stretch",
+        "price": 229000,
+        "image": "images/image3.jpeg",
+        "desc": "Merek: DenimWorks. Celana jeans berbahan denim stretch yang fleksibel dan nyaman dipakai. Model slim fit modern yang pas di badan. Cocok dipadukan dengan kaos atau kemeja.",
+        "stock": 20
+    },
+    {
+        "id": "p4",
+        "title": "Celana Chino Panjang Premium",
+        "price": 195000,
+        "image": "images/image4.jpeg",
+        "desc": "Merek: Classic Wear Co. Celana chino berbahan katun twill premium yang ringan dan nyaman. Model semi-formal cocok untuk kuliah, kerja, maupun acara santai. Tersedia warna hitam, navy, dan khaki.",
+        "stock": 12
+    },
+    {
+        "id": "p5",
+        "title": "Kaos Basic Cotton Premium",
+        "price": 89000,
+        "image": "images/image5.jpeg",
+        "desc": "Kaos berbahan 100% cotton combed 30s yang lembut, adem, dan menyerap keringat. Jahitan rapi dan tidak mudah melar. Cocok untuk aktivitas sehari-hari dan tersedia dalam berbagai pilihan warna serta ukuran (S-XXL).",
+        "stock": 30
+    },
+    {
+        "id": "p6",
+        "title": "Kemeja Flanel Casual Pria",
+        "price": 179000,
+        "image": "images/image6.jpeg",
+        "desc": "Kemeja flanel dengan bahan lembut dan hangat, nyaman digunakan untuk gaya santai maupun semi-formal. Memiliki desain kotak klasik dengan potongan regular fit yang stylish. Cocok dipadukan dengan jeans atau chino.",
+        "stock": 18
+    },
+    {
+        "id": "p7",
+        "title": "Celana Jeans Slim Fit DenimPro",
+        "price": 249000,
+        "image": "images/image7.jpeg",
+        "desc": "Celana jeans berbahan denim stretch yang nyaman dan fleksibel saat digunakan. Model slim fit memberikan tampilan modern dan rapi. Tidak mudah pudar serta cocok untuk acara kasual maupun hangout.",
+        "stock": 14
+    },
+    {
+        "id": "p8",
+        "title": "Celana Chino Casual FlexWear",
+        "price": 199000,
+        "image": "images/image8.jpeg",
+        "desc": "Celana chino berbahan katun stretch yang ringan dan nyaman. Desain simpel dengan potongan slim fit membuat penampilan terlihat lebih elegan namun tetap santai. Cocok untuk kerja, kuliah, atau acara semi-formal.",
+        "stock": 10
+    },
+    {
+        "id": "p9",
+        "title": "SWEATSHIRT OVERSIZED",
+        "price": 399900,
+        "image": "images/image9.jpeg",
+        "desc": "Sweatshirt pendek oversized dari jersey dengan sentuhan lembut yang disikat. Leher bulat dengan trim rib, bahu jatuh, dan lengan panjang.",
+        "stock": 8
+    },
+    {
+        "id": "p10",
+        "title": "ATASAN DENGAN KANCING DEPAN",
+        "price": 499900,
+        "image": "images/image10.jpeg",
+        "desc": "Atasan fitted berlengan pendek dari kain tenun dengan leher kotak dan kancing tertutup di bagian depan. Jahitan pembentuk di bagian depan dan belakang, saku palsu model welt di bagian depan, serta tepi bawah depan yang melengkung. Berlapis.",
+        "stock": 5
+    },
+    {
+        "id": "p11",
+        "title": "ATASAN KATUN LENGAN PANJANG",
+        "price": 299900,
+        "image": "images/image11.jpeg",
+        "desc": "Atasan dari katun jersey lembut dengan leher bulat bertrim rib, bahu jatuh, dan lengan panjang.",
+        "stock": 12
+    },
+    {
+        "id": "p12",
+        "title": "KAOS FITTED",
+        "price": 199900,
+        "image": "images/image12.jpeg",
+        "desc": "Kaos oblong yang pas di badan terbuat dari jersey katun lembut dengan kerah bulat dan jahitan yang terlihat di bagian belakang",
+        "stock": 20
+    },
+    {
+        "id": "p13",
+        "title": "Jil Sander V-neck blouse",
+        "price": 5742740,
+        "image": "images/image13.jpeg",
+        "desc": "Atasan V-neck dari Jil Sander ini adalah pilihan fashion elegan yang memadukan desain minimalis dengan detail yang refined. Siluet V-neck yang halus memberikan kesan feminin dan menambah dimensi visual pada bagian atas tubuh, membuatnya ideal untuk dipadukan dengan celana tailored atau rok midi. Material berkualitas tinggi memastikan tampilan yang tetap rapi sekaligus nyaman sepanjang hari.",
+        "stock": 3
+    },
+    {
+        "id": "p14",
+        "title": "Veronica Beard Thorp cotton blouse",
+        "price": 4633797,
+        "image": "images/image14.jpeg",
+        "desc": "Blouse katun dari Veronica Beard ini memancarkan aura feminin modern yang effortless. Dibuat dari bahan katun premium yang lembut dan breathable, blouse ini terasa nyaman dipakai sepanjang hari tanpa mengorbankan tampilan elegan. Potongan yang terstruktur rapi menciptakan garis siluet yang halus dan proporsional.",
+        "stock": 4
+    },
+    {
+        "id": "p15",
+        "title": "Sandro Paris Dorine Top",
+        "price": 1383937,
+        "image": "images/image15.jpeg",
+        "desc": "Dorine Top dari Sandro Paris merupakan atasan wanita dengan desain modern yang mencerminkan estetika Parisian chic yang bersih dan elegan. Hadir dalam potongan cropped dengan siluet yang terstruktur rapi, atasan tanpa lengan ini menampilkan garis bahu yang tegas serta neckline tinggi berbentuk bulat.",
+        "stock": 6
+    },
+    {
+        "id": "p16",
+        "title": "Astrid Top Ivory",
+        "price": 16978400,
+        "image": "images/image16.jpeg",
+        "desc": "Astrid Top dari Lovebirds International dalam warna ivory menghadirkan kesan elegan yang lembut dan sophisticated. Warna ivory yang timeless dan finishing halus membuat top ini tampak mewah sekaligus versatile. Siluet clean-cut dan desain yang refined mempermudah kamu untuk memadukannya dengan berbagai item wardrobe.",
+        "stock": 2
+    }
+]

@@ -69,7 +69,7 @@ const template = (product) => `<!DOCTYPE html>
         }
     </style>
 </head>
-<body class="text-primaryDark antialiased static-gradient">
+<body class="text-primaryDark antialiased static-gradient flex flex-col min-h-screen">
 
     <!-- NAVIGATION -->
     <nav class="fixed top-0 left-0 right-0 z-50 pill-nav transition-all duration-300">
@@ -131,7 +131,7 @@ const template = (product) => `<!DOCTYPE html>
     </nav>
 
     <!-- PRODUCT DETAIL SECTION -->
-    <main class="max-w-7xl mx-auto px-6 py-32 md:py-40 bg-transparent">
+    <main class="max-w-7xl mx-auto px-6 py-32 md:py-40 bg-transparent flex-grow">
         <!-- Breadcrumb -->
         <div class="flex items-center space-x-2 text-sm text-gray-500">
             <a href="index.html" class="hover:text-[#00ACC1] transition-colors">Home</a>
