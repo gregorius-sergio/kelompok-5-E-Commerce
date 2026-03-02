@@ -1,0 +1,107 @@
+/* --- MODERNISM E-COMMERCE CORE STYLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+html {
+    zoom: 80%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fafafa;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism helpers */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.glass-dropdown {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+/* Custom hiding scrollbar for sleekness */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Animations & Transitions */
+.animated-bg {
+    background: linear-gradient(-45deg, #ffffff, #f0fdf4, #ecfeff, #f8fafc);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-marquee {
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.transition-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.image-hover-zoom {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .image-hover-zoom {
+    transform: scale(1.05);
+}
+
+/* Carousel controls overrides */
+.carousel-content {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
