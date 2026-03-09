@@ -127,27 +127,28 @@
 <body data-page="1" class="text-primaryDark antialiased static-gradient flex flex-col min-h-screen">
 
     <!-- NAVIGATION -->
-   <nav class="fixed top-0 left-0 right-0 z-50 pill-nav transition-all duration-300">
-    <div class="relative max-w-7xl mx-auto px-6 h-20">
+  <nav class="fixed top-0 left-0 right-0 z-50 pill-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 grid grid-cols-3 items-center">
         
-        <div class="absolute left-8 top-1/2 -translate-y-1/2 z-50">
+        <div class="relative flex items-center h-full">
             <img src="images/nova-logo.png" 
-                alt="Nova" class="h-28 w-auto transform transition-transform hover:scale-105 origin-left">
+                 alt="Nova" 
+                 class="absolute left-0 top-1/2 -translate-y-1/2 h-28 w-auto transform transition-transform hover:scale-105 origin-left">
         </div>
 
-        <div class="hidden md:flex items-center space-x-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-max z-40">
-            <a href="index.html" class="nav-link text-primaryDark">
+        <div class="hidden md:flex justify-center items-center space-x-6">
+            <a href="index.html" class="nav-link text-primaryDark flex items-center gap-1">
                 <i class="ph ph-house text-xl"></i> Home
             </a>
-            <a href="#featured" class="nav-link text-primaryDark">
+            <a href="#featured" class="nav-link text-primaryDark flex items-center gap-1">
                 <i class="ph ph-star text-xl"></i> Best Sellers
             </a>
-            <a href="page2.html" class="nav-link text-primaryDark">
+            <a href="page2.html" class="nav-link text-primaryDark flex items-center gap-1">
                 <i class="ph ph-shopping-bag-open text-xl"></i> Shop All
             </a>
         </div>
         
-        <div class="absolute right-8 top-1/2 -translate-y-1/2 flex items-center space-x-6 z-50">
+        <div class="flex justify-end items-center space-x-6">
             
             <button class="text-gray-800 hover:text-black">
                 <i class="ph ph-magnifying-glass text-2xl"></i>
@@ -542,6 +543,7 @@
 
 
 </html>
+
 
 
 
